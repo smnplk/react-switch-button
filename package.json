@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/gfazioli/react-switch-button",
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.0"
   },
   "devDependencies": {
     "less": "^2.5.1",
