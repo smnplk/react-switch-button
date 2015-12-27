@@ -1,15 +1,15 @@
 {
   "name": "react-switch-button",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "A React UI Component to display an awesome Switch (swipe) Button control",
   "main": "dist/react-switch-button.min.js",
   "scripts": {
-    "build": "npm run build:jsx && npm run build:cp && npm run example && npm run example:jsx && npm run less:minify",
-    "build:jsx": "./node_modules/.bin/jsx --harmony ./src/ ./dist/",
+    "build": "npm run build:jsx && npm run build:cp && npm run example && npm run less:minify",
+    "build:jsx": "browserify -t [ babelify --presets [ react ] ] ./src/react-switch-button.js -o ./dist/react-switch-button.js",
     "less:minify": "./node_modules/.bin/lessc -x ./src/react-switch-button.less ./dist/react-switch-button.min.css",
     "build:cp": "./node_modules/.bin/uglifyjs ./dist/react-switch-button.js -o ./dist/react-switch-button.min.js",
     "example": "cp ./dist/*min.* ./example/assets/",
-    "example:jsx": "./node_modules/.bin/jsx --harmony ./example/src/ ./example/assets/",
+    "example:jsx": "browserify -t [ babelify --presets [ react ] ] ./example/src/demo.js -o ./example/dist/demo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,9 +35,13 @@
     "react": "^0.14.0"
   },
   "devDependencies": {
+    "babel-preset-react": "^6.3.13",
+    "babelify": "7.2.0",
+    "browserify": "^12.0.1",
     "less": "^2.5.1",
     "react": "^0.14.0",
-    "requirejs": "~2.1.9",
+    "react-dom": "^0.14.0",
+    "requirejs": "~2.1.22",
     "uglify-js": "^2.4.23"
   }
 }

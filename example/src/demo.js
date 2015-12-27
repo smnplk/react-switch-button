@@ -3,6 +3,10 @@
  *
  */
 
+var React = require("react");
+var ReactDom = require("react-dom");
+var SwitchButton = require("../assets/react-switch-button.min.js");
+
 var Demo = React.createClass( {
 
   render : function()
@@ -50,7 +54,7 @@ var Demo = React.createClass( {
 
 } );
 
-React.render(
+ReactDom.render(
   <Demo />,
   document.getElementById( 'content' )
 );

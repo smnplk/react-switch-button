@@ -37,7 +37,7 @@ var SwitchButton = React.createClass( {
   displayName : 'Switch Button',
 
   // Version
-  version : '1.0.4',
+  version : '2.0.0',
 
   /**
    * The props types.
